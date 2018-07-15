@@ -159,10 +159,10 @@ System::System(const string &strVocFile, const string &strSettingsFile, const eS
     cout << "Do you want to load the map?(y/n)" << endl;  
     cin >> IsLoadMap;
     SystemSetting *mySystemSetting = new SystemSetting(mpVocabulary);  
-    mySystemSetting->LoadSystemSetting(strPathSystemSetting);
+    mySystemSetting->LoadSystemSetting("/home/nvidia/catkin_ws/src/ORB_SLAM2/Zed.yaml");
     // mySystemSetting->LoadSystemSetting("/home/boom/MY_ORB_SLAM2/ORB_SLAM2/Examples/Stereo/KITTI04-12.yaml");
     if(IsLoadMap == 'Y' || IsLoadMap == 'y'){  
-        mpMap->Load(strPathMap, mySystemSetting, mpKeyFrameDatabase);
+        mpMap->Load("/home/nvidia/catkin_ws/src/ORB_SLAM2/MapPointandKeyFrame.bin", mySystemSetting, mpKeyFrameDatabase);
     }
 
     //Set pointers between threads
